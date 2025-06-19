@@ -46,6 +46,15 @@ const search = () => {
           marginVertical: 16
         }}
         contentContainerStyle={{ paddingBottom: 100 }}
+        ListEmptyComponent={
+          !loading && !error ? (
+            <View>
+              <Text className='text-center text-gray-500'>
+                {searchQuery.trim() ? 'No movies found' : 'Search for a movie'}
+              </Text>
+            </View>
+          ) : null
+        }
         ListHeaderComponent={
           <>
             <View className='w-full flex-row justify-center mt-20 items-center'>
